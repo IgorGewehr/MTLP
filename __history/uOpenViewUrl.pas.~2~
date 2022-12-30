@@ -1,0 +1,160 @@
+unit uOpenViewUrl;
+
+interface
+
+uses
+  Classes, SysUtils, FMX.Forms, FMX.Objects, FMX.Dialogs, FMX.Platform,
+  System.IOUtils, FMX.Controls, FMX.StdCtrls
+
+{$IFDEF WIN32}
+  , ShellApi
+  , Windows
+{$ENDIF}
+
+{$IFDEF IOS}
+  , iosAPi.Foundation
+  , Macapi.Helpers
+  , FMX.Helpers.iOS
+{$ENDIF}
+
+{$IFDEF ANDROID}
+  , androidapi.JNI.GraphicsContentViewText
+  , Androidapi.Helpers
+  , Androidapi.JNI.Net
+  , Androidapi.JNI.JavaTypes
+  , Androidapi.JNI.Webkit
+  , IdURI
+{$ENDIF}
+
+  ;
+
+function OpenURL (const URL: string; const DisplayError: Boolean = False):
+    Boolean;
+
+{$IFDEF ANDROID}
+function findMimeType (file_extension : string) : JString;
+{$ENDIF}
+
+function OpenFile (file_name : string; const DisplayError : Boolean = False) :
+    boolean;
+
+implementation
+
+
+{$IFDEF WIN32}
+function WindowsTempFolder : string;
+var
+  Buffer : array[0..Max_path] of char;
+begin
+  FillChar(Buffer, SizeOf(Char)*(Max_Path + 1), 0);
+  GetTempPath(Max_path, Buffer);
+  Result := string(Buffer);
+  if Result[Length(Result)] <> '\' then
+    Result := Result + '\';
+end;
+{$ENDIF}
+
+{$IFDEF ANDROID}
+function findMimeType (file_extension : string) : JString;
+begin
+    file_extension := StringReplace (file_extension, '.', '', []);
+    result := TJMimeTypeMap.JavaClass.getSingleton.getMimeTypeFromExtension
+        (StringToJString (file_extension));
+end;
+{$ENDIF}
+
+function OpenFile (file_name : string; const DisplayError : Boolean = False) :
+    boolean;
+
+  {$IFDEF ANDROID}
+    var
+        browseIntent: JIntent;
+        uri : Jnet_Uri;
+        file_ext : string;
+        mime_type : JString;
+    begin
+        file_ext := TPath.GetExtension (file_name);
+        mime_type := findMimeType (file_ext);
+        file_name := 'file://' + file_name;
+
+        browseIntent := TJIntent.JavaClass.init (TJIntent.JavaClass.ACTION_VIEW);
+
+        uri := StrToJURI (file_name);
+        browseIntent.setDataAndType (uri, mime_type);
+        SharedActivity.startActivity (browseIntent);
+    end;
+  {$ENDIF}
+
+  {$IFDEF IOS}
+    var
+      NSU: NSUrl;
+    begin
+
+        // iOS doesn't like spaces, so file encode is important.
+        NSU := TNSURL.Wrap (TNSURL.OCClass.URLWithString (StrToNSStr
+            (PChar (file_name))));
+        if SharedApplication.canOpenURL (NSU) then
+            exit (SharedApplication.openUrl (NSU))
+        else
+        begin
+            if DisplayError then
+                ShowMessage ('Error: Opening "' + file_name + '" not supported.');
+            exit;
+        end;
+    end;
+  {$ENDIF}
+
+  {$IFDEF WIN32}
+    begin
+        ShellExecute (0, 'open', PWideChar (file_name),
+            nil,  PWideChar (ExtractFilePath (file_name)), SW_SHOWNORMAL);
+    end;
+  {$ENDIF}
+
+
+function OpenURL (const URL: string; const DisplayError: Boolean = False):
+    Boolean;
+{$IFDEF ANDROID}
+var
+  Intent: JIntent;
+begin
+// There may be an issue with the geo: prefix and URLEncode.
+// will need to research
+  Intent := TJIntent.JavaClass.init(TJIntent.JavaClass.ACTION_VIEW,
+    TJnet_Uri.JavaClass.parse(StringToJString(TIdURI.URLEncode(URL))));
+  try
+    SharedActivity.startActivity(Intent);
+    exit(true);
+  except
+    on e: Exception do
+    begin
+      if DisplayError then ShowMessage('Error: ' + e.Message);
+      exit(false);
+    end;
+  end;
+end;
+{$ENDIF}
+{$IFDEF IOS}
+var
+  NSU: NSUrl;
+begin
+  // iOS doesn't like spaces, so URL encode is important.
+   NSU := TNSURL.Wrap(TNSURL.OCClass.URLWithString (StrToNSStr (PChar(URL))));
+  if SharedApplication.canOpenURL(NSU) then
+    exit(SharedApplication.openUrl(NSU))
+  else
+  begin
+    if DisplayError then
+      ShowMessage('Error: Opening "' + URL + '" not supported.');
+    exit(false);
+  end;
+end;
+{$ENDIF}
+{$IFDEF WIN32}
+  begin
+    ShellExecute (0, 'open', PWideChar (URL),
+      '',  '', SW_SHOWNORMAL);
+  end;
+{$ENDIF}
+
+end.

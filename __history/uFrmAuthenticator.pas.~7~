@@ -1,0 +1,126 @@
+unit uFrmAuthenticator;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, FMX.Edit, uFancyDialog,
+  FMX.Effects, System.DateUtils;
+
+type
+  TfrmAuthent = class(TForm)
+    LytImage: TLayout;
+    Image1: TImage;
+    lytVerificar: TLayout;
+    recVerificar: TRectangle;
+    LytButton: TLayout;
+    Rectangle1: TRectangle;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Rectangle2: TRectangle;
+    Layout1: TLayout;
+    Label2: TLabel;
+    Image2: TImage;
+    ShadowEffect1: TShadowEffect;
+    StyleBook1: TStyleBook;
+    Layout2: TLayout;
+    Label3: TLabel;
+    Label4: TLabel;
+    procedure Rectangle1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    autenticado : string;
+    liberado : TDateTime;
+  end;
+
+var
+  frmAuthent: TfrmAuthent;
+  diag : TFancyDialog;
+
+implementation
+
+{$R *.fmx}
+{$R *.XLgXhdpiTb.fmx ANDROID}
+{$R *.LgXhdpiTb.fmx ANDROID}
+{$R *.Surface.fmx MSWINDOWS}
+
+uses
+Loading, math, uDmPrincipal, uFrmVencedores,uFrmLotomania, uFrmTabela, uFrmPrincipal, uFrmInicial;
+
+procedure TfrmAuthent.FormShow(Sender: TObject);
+begin
+  rectangle2.Margins.Bottom := (frmAuthent.height /2) - 180;
+end;
+
+procedure TfrmAuthent.Rectangle1Click(Sender: TObject);
+begin
+  diag := TFancyDialog.Create(frmAuthent);
+
+  autenticado := 'igor';
+  if edit1.Text = autenticado then
+  begin
+
+
+    Application.CreateForm(TFrmInicial,FrmInicial);
+    FrmInicial.show;
+
+    TLoading.Show(frmInicial, 'Sincronizando dados...');
+
+    dmPrincipal.qryONLINEDATA.Active := False;
+    dmPrincipal.qryONLINEDATA.Active := True;
+
+
+
+      if dmPrincipal.qryONLINEDATA <> nil then
+      begin
+        if (DayOf(today) mod 3 = 0) then
+        begin
+          if dmPrincipal.qryONLINEDATA.FieldByName('ULTIMA_ATT').AsDateTime <> today then
+          begin
+            frmPrincipal.deletaBanco;
+            dmPrincipal.CarregaBD;
+
+            TThread.Synchronize(nil,procedure
+            begin
+              TLoading.Hide;
+            end);
+          end
+          else
+          begin
+            TThread.Synchronize(nil,procedure
+            begin
+              TLoading.Hide;
+            end);
+          end;
+
+        end;
+      end
+      else
+      begin
+        dmPrincipal.CarregaBD;
+
+        TThread.Synchronize(nil,procedure
+        begin
+          TLoading.Hide;
+        end);
+      end;
+
+      TThread.Synchronize(nil,procedure
+      begin
+        TLoading.Hide;
+      end);
+
+
+  end
+  else
+  begin
+     diag.Show(TIconDialog.Error,'Ops','Você código inválido :(');
+  end;
+
+end;
+
+end.

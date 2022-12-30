@@ -1,0 +1,1252 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.DateUtils, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Layouts, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Ani, FMX.TabControl;
+
+type
+  TFrmPrincipal = class(TForm)
+    LytFundo: TLayout;
+    LblTitulo: TLabel;
+    LytTitulo: TLayout;
+    LytSemiTitulo: TLayout;
+    LblSTOP: TLabel;
+    LblSBOT: TLabel;
+    Rectangle1: TRectangle;
+    Rectangle2: TRectangle;
+    Rectangle3: TRectangle;
+    Rectangle4: TRectangle;
+    Rectangle5: TRectangle;
+    Rectangle6: TRectangle;
+    Rectangle7: TRectangle;
+    Rectangle8: TRectangle;
+    Rectangle9: TRectangle;
+    Rectangle10: TRectangle;
+    LytBottom: TLayout;
+    Label1: TLabel;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    Layout3: TLayout;
+    Layout4: TLayout;
+    Circle1: TCircle;
+    Circle2: TCircle;
+    Circle3: TCircle;
+    Circle4: TCircle;
+    Circle5: TCircle;
+    Label1a: TLabel;
+    Label5a: TLabel;
+    Label4a: TLabel;
+    Label3a: TLabel;
+    Label2a: TLabel;
+    Circle6: TCircle;
+    Label6a: TLabel;
+    Circle7: TCircle;
+    Label9a: TLabel;
+    Circle8: TCircle;
+    label8a: TLabel;
+    Circle9: TCircle;
+    Label7a: TLabel;
+    Circle10: TCircle;
+    Label10a: TLabel;
+    Circle11: TCircle;
+    label11a: TLabel;
+    Circle12: TCircle;
+    Label15a: TLabel;
+    Circle13: TCircle;
+    Label14a: TLabel;
+    Circle14: TCircle;
+    Label12a: TLabel;
+    Circle15: TCircle;
+    Label13a: TLabel;
+    Layout5: TLayout;
+    Layout6: TLayout;
+    Circle16: TCircle;
+    Label1j: TLabel;
+    Circle17: TCircle;
+    label5j: TLabel;
+    Circle18: TCircle;
+    label4j: TLabel;
+    Circle19: TCircle;
+    Label3j: TLabel;
+    Circle20: TCircle;
+    Label2j: TLabel;
+    Layout7: TLayout;
+    Circle21: TCircle;
+    label6j: TLabel;
+    Circle22: TCircle;
+    label9j: TLabel;
+    Circle23: TCircle;
+    label8j: TLabel;
+    Circle24: TCircle;
+    label7j: TLabel;
+    Circle25: TCircle;
+    label10j: TLabel;
+    Layout8: TLayout;
+    Circle26: TCircle;
+    label11j: TLabel;
+    Circle27: TCircle;
+    label15j: TLabel;
+    Circle28: TCircle;
+    label14j: TLabel;
+    Circle29: TCircle;
+    label12j: TLabel;
+    Circle30: TCircle;
+    label13j: TLabel;
+    Layout9: TLayout;
+    Layout10: TLayout;
+    Circle31: TCircle;
+    label1i: TLabel;
+    Circle32: TCircle;
+    Label5i: TLabel;
+    Circle33: TCircle;
+    label4i: TLabel;
+    Circle34: TCircle;
+    Label3i: TLabel;
+    Circle35: TCircle;
+    Label2i: TLabel;
+    Layout11: TLayout;
+    Circle36: TCircle;
+    Label6i: TLabel;
+    Circle37: TCircle;
+    Label9i: TLabel;
+    Circle38: TCircle;
+    Label8i: TLabel;
+    Circle39: TCircle;
+    Label7i: TLabel;
+    Circle40: TCircle;
+    Label10i: TLabel;
+    Layout12: TLayout;
+    Circle41: TCircle;
+    Label11i: TLabel;
+    Circle42: TCircle;
+    Label15i: TLabel;
+    Circle43: TCircle;
+    Label14i: TLabel;
+    Circle44: TCircle;
+    Label12i: TLabel;
+    Circle45: TCircle;
+    Label13i: TLabel;
+    Layout13: TLayout;
+    Layout14: TLayout;
+    Circle46: TCircle;
+    Label1h: TLabel;
+    Circle47: TCircle;
+    Label5h: TLabel;
+    Circle48: TCircle;
+    Label4h: TLabel;
+    Circle49: TCircle;
+    Label3h: TLabel;
+    Circle50: TCircle;
+    Label2h: TLabel;
+    Layout15: TLayout;
+    Circle51: TCircle;
+    Label6h: TLabel;
+    Circle52: TCircle;
+    Label9h: TLabel;
+    Circle53: TCircle;
+    Label8h: TLabel;
+    Circle54: TCircle;
+    Label7h: TLabel;
+    Circle55: TCircle;
+    Label10h: TLabel;
+    Layout16: TLayout;
+    Circle56: TCircle;
+    Label11h: TLabel;
+    Circle57: TCircle;
+    Label15h: TLabel;
+    Circle58: TCircle;
+    Label14h: TLabel;
+    Circle59: TCircle;
+    Label12h: TLabel;
+    Circle60: TCircle;
+    Label13h: TLabel;
+    Layout17: TLayout;
+    Layout18: TLayout;
+    Circle61: TCircle;
+    Label1g: TLabel;
+    Circle62: TCircle;
+    Label5g: TLabel;
+    Circle63: TCircle;
+    Label4g: TLabel;
+    Circle64: TCircle;
+    Label3g: TLabel;
+    Circle65: TCircle;
+    Label2g: TLabel;
+    Layout19: TLayout;
+    Circle66: TCircle;
+    Label6g: TLabel;
+    Circle67: TCircle;
+    Label9g: TLabel;
+    Circle68: TCircle;
+    Label8g: TLabel;
+    Circle69: TCircle;
+    Label7g: TLabel;
+    Circle70: TCircle;
+    Label10g: TLabel;
+    Layout20: TLayout;
+    Circle71: TCircle;
+    Label11g: TLabel;
+    Circle72: TCircle;
+    Label15g: TLabel;
+    Circle73: TCircle;
+    Label14g: TLabel;
+    Circle74: TCircle;
+    Label12g: TLabel;
+    Circle75: TCircle;
+    Label13g: TLabel;
+    Layout21: TLayout;
+    Layout22: TLayout;
+    Circle76: TCircle;
+    label1f: TLabel;
+    Circle77: TCircle;
+    Label5f: TLabel;
+    Circle78: TCircle;
+    Label4f: TLabel;
+    Circle79: TCircle;
+    Label3f: TLabel;
+    Circle80: TCircle;
+    Label2f: TLabel;
+    Layout23: TLayout;
+    Circle81: TCircle;
+    Label6f: TLabel;
+    Circle82: TCircle;
+    Label9f: TLabel;
+    Circle83: TCircle;
+    Label8f: TLabel;
+    Circle84: TCircle;
+    Label7f: TLabel;
+    Circle85: TCircle;
+    Label10f: TLabel;
+    Layout24: TLayout;
+    Circle86: TCircle;
+    Label11f: TLabel;
+    Circle87: TCircle;
+    Label15f: TLabel;
+    Circle88: TCircle;
+    Label14f: TLabel;
+    Circle89: TCircle;
+    Label12f: TLabel;
+    Circle90: TCircle;
+    Label13f: TLabel;
+    Layout25: TLayout;
+    Layout26: TLayout;
+    Circle91: TCircle;
+    label1e: TLabel;
+    Circle92: TCircle;
+    Label5e: TLabel;
+    Circle93: TCircle;
+    Label4e: TLabel;
+    Circle94: TCircle;
+    Label3e: TLabel;
+    Circle95: TCircle;
+    Label2e: TLabel;
+    Layout27: TLayout;
+    Circle96: TCircle;
+    Label6e: TLabel;
+    Circle97: TCircle;
+    Label9e: TLabel;
+    Circle98: TCircle;
+    Label8e: TLabel;
+    Circle99: TCircle;
+    Label7e: TLabel;
+    Circle100: TCircle;
+    Label10e: TLabel;
+    Layout28: TLayout;
+    Circle101: TCircle;
+    Label11e: TLabel;
+    Circle102: TCircle;
+    Label15e: TLabel;
+    Circle103: TCircle;
+    Label14e: TLabel;
+    Circle104: TCircle;
+    Label12e: TLabel;
+    Circle105: TCircle;
+    Label13e: TLabel;
+    Layout29: TLayout;
+    Layout30: TLayout;
+    Circle106: TCircle;
+    label1d: TLabel;
+    Circle107: TCircle;
+    label5d: TLabel;
+    Circle108: TCircle;
+    label4d: TLabel;
+    Circle109: TCircle;
+    label3d: TLabel;
+    Circle110: TCircle;
+    label2d: TLabel;
+    Layout31: TLayout;
+    Circle111: TCircle;
+    label6d: TLabel;
+    Circle112: TCircle;
+    label9d: TLabel;
+    Circle113: TCircle;
+    label8d: TLabel;
+    Circle114: TCircle;
+    label7d: TLabel;
+    Circle115: TCircle;
+    label10d: TLabel;
+    Layout32: TLayout;
+    Circle116: TCircle;
+    label11d: TLabel;
+    Circle117: TCircle;
+    label15d: TLabel;
+    Circle118: TCircle;
+    label14d: TLabel;
+    Circle119: TCircle;
+    label12d: TLabel;
+    Circle120: TCircle;
+    label13d: TLabel;
+    Layout33: TLayout;
+    Layout34: TLayout;
+    Circle121: TCircle;
+    Label1c: TLabel;
+    Circle122: TCircle;
+    label5c: TLabel;
+    Circle123: TCircle;
+    label4c: TLabel;
+    Circle124: TCircle;
+    Label3c: TLabel;
+    Circle125: TCircle;
+    Label2c: TLabel;
+    Layout35: TLayout;
+    Circle126: TCircle;
+    label6c: TLabel;
+    Circle127: TCircle;
+    label9c: TLabel;
+    Circle128: TCircle;
+    label8c: TLabel;
+    Circle129: TCircle;
+    label7c: TLabel;
+    Circle130: TCircle;
+    label10c: TLabel;
+    Layout36: TLayout;
+    Circle131: TCircle;
+    label11c: TLabel;
+    Circle132: TCircle;
+    label15c: TLabel;
+    Circle133: TCircle;
+    label14c: TLabel;
+    Circle134: TCircle;
+    label12c: TLabel;
+    Circle135: TCircle;
+    label13c: TLabel;
+    Layout37: TLayout;
+    Layout38: TLayout;
+    Circle136: TCircle;
+    label1b: TLabel;
+    Circle137: TCircle;
+    Label5b: TLabel;
+    Circle138: TCircle;
+    Label4b: TLabel;
+    Circle139: TCircle;
+    Label3b: TLabel;
+    Circle140: TCircle;
+    Label2b: TLabel;
+    Layout39: TLayout;
+    Circle141: TCircle;
+    Label6b: TLabel;
+    Circle142: TCircle;
+    Label9b: TLabel;
+    Circle143: TCircle;
+    Label8b: TLabel;
+    Circle144: TCircle;
+    Label7b: TLabel;
+    Circle145: TCircle;
+    Label10b: TLabel;
+    Layout40: TLayout;
+    Circle146: TCircle;
+    Label11b: TLabel;
+    Circle147: TCircle;
+    Label15b: TLabel;
+    Circle148: TCircle;
+    Label14b: TLabel;
+    Circle149: TCircle;
+    Label12b: TLabel;
+    Circle150: TCircle;
+    Label13b: TLabel;
+    Layout41: TLayout;
+    Layout42: TLayout;
+    Layout43: TLayout;
+    Layout45: TLayout;
+    Layout46: TLayout;
+    Layout44: TLayout;
+    Layout47: TLayout;
+    Layout48: TLayout;
+    Layout49: TLayout;
+    Layout50: TLayout;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Image1: TImage;
+    RecMenuFundo: TRectangle;
+    Layout51: TLayout;
+    Label12: TLabel;
+    Image2: TImage;
+    Layout52: TLayout;
+    Layout53: TLayout;
+    Image3: TImage;
+    Label13: TLabel;
+    Layout54: TLayout;
+    Image4: TImage;
+    Label14: TLabel;
+    WidthAnimation: TFloatAnimation;
+    WidthAnimation2: TFloatAnimation;
+    Layout55: TLayout;
+    Image5: TImage;
+    Label15: TLabel;
+    Layout56: TLayout;
+    Image6: TImage;
+    Label16: TLabel;
+    Layout57: TLayout;
+    Image7: TImage;
+    Label17: TLabel;
+    Layout58: TLayout;
+    Image8: TImage;
+    LBLINICIO: TLabel;
+    procedure Image1Click(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure WidthAnimationFinish(Sender: TObject);
+    procedure Label13Click(Sender: TObject);
+    procedure Label15Click(Sender: TObject);
+    procedure Label14Click(Sender: TObject);
+    procedure Label16Click(Sender: TObject);
+    procedure LBLINICIOClick(Sender: TObject);
+    procedure Label17Click(Sender: TObject);
+  private
+    procedure OpenMenu(open: Boolean);
+
+    { Private declarations }
+  public
+    { Public declarations }
+    ultimaData : TDateTime;
+    atualizaLotomania : Boolean;
+    procedure deletaBanco;
+    procedure atualizaJogoDez;
+    procedure atualizaJogoNove;
+    procedure atualizaJogoOito;
+    procedure atualizaJogoSete;
+    procedure atualizaJogoSeis;
+    procedure atualizaJogoCinco;
+    procedure atualizaJogoQuatro;
+    procedure atualizaJogoTres;
+    procedure atualizaJogoDois;
+    procedure atualizaJogoUm;
+    procedure geraNumeros(Sender: TObject);
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+{$R *.fmx}
+
+uses
+Loading, math, uDmPrincipal, uFrmVencedores,uFrmLotomania, uFrmTabela, uFrmInicial, uFrmJogos;
+
+
+
+procedure TFrmPrincipal.geraNumeros(Sender: TObject);
+begin
+  if (DayOf(today) mod 3 = 0) then
+     begin
+      if ultimaData = today then
+      begin
+        TThread.Synchronize(nil,procedure
+            begin
+              lblSTOP.Text := 'JOGOS VÁLIDOS ATÉ DIA ' + DateToStr(date + 3);
+
+              atualizaJogoDez;
+              atualizaJogoNove;
+              atualizaJogoOito;
+              atualizaJogoSete;
+              atualizaJogoSeis;
+              atualizaJogoCinco;
+              atualizaJogoQuatro;
+              atualizaJogoTres;
+              atualizaJogoDois;
+              atualizaJogoUm;
+
+
+
+              sleep(2000);
+              TLoading.Hide;
+            end);
+      end
+      else
+      begin
+          //TLoading.Show(FrmPrincipal, 'Gerando os números vencedores...');
+
+
+          TThread.CreateAnonymousThread(procedure
+          begin
+            {deletaBanco;
+            dmPrincipal.CriarJogoLotomaniaUm;
+            dmPrincipal.CriarJogoLotomaniaDois;
+            dmPrincipal.CriarJogoLotomaniaTres;
+            dmPrincipal.CriaNumerosAleatoriosJogo1;
+            dmPrincipal.CriaNumerosAleatoriosJogo2;
+            dmPrincipal.CriaNumerosAleatoriosJogo3;
+            dmPrincipal.CriaNumerosAleatoriosJogo4;
+            dmPrincipal.CriaNumerosAleatoriosJogo5;
+            dmPrincipal.CriaNumerosAleatoriosJogo6;
+            dmPrincipal.CriaNumerosAleatoriosJogo7;
+            dmPrincipal.CriaNumerosAleatoriosJogo8;
+            dmPrincipal.CriaNumerosAleatoriosJogo9;
+            dmPrincipal.CriaNumerosAleatoriosJogo10;
+
+            dmPrincipal.qryONLINEDATA.Active := False;
+            dmPrincipal.qryONLINEDATA.Active := True;
+            dmPrincipal.qryONLINEDATA.insert;
+            dmPrincipal.qryONLINEDATA.FieldByName('ULTIMA_ATT').AsDateTime := today;
+            dmPrincipal.qryONLINEDATA.Post;    }
+
+
+            TThread.Synchronize(nil,procedure
+            begin
+              lblSTOP.Text := 'JOGOS VÁLIDOS ATÉ DIA ' + DateToStr(date + 3);
+
+              atualizaJogoDez;
+              atualizaJogoNove;
+              atualizaJogoOito;
+              atualizaJogoSete;
+              atualizaJogoSeis;
+              atualizaJogoCinco;
+              atualizaJogoQuatro;
+              atualizaJogoTres;
+              atualizaJogoDois;
+              atualizaJogoUm;
+
+
+
+              //sleep(2000);
+              //TLoading.Hide;
+            end);
+
+          end).Start;
+      end;
+
+     end;
+
+
+
+     if DayOf(yesterday) mod 3 = 0 then
+     begin
+
+        dmPrincipal.qryNUMEROSUM.Active := False;
+        dmPrincipal.qryNUMEROSUM.Active := True;
+
+        if not dmPrincipal.qryNUMEROSUM.IsEmpty then
+        begin
+          TThread.Synchronize(nil,procedure
+          begin
+            lblSTOP.Text := 'JOGOS VÁLIDOS ATÉ DIA ' + DateToStr(date + 2);
+
+            atualizaJogoDez;
+            atualizaJogoNove;
+            atualizaJogoOito;
+            atualizaJogoSete;
+            atualizaJogoSeis;
+            atualizaJogoCinco;
+            atualizaJogoQuatro;
+            atualizaJogoTres;
+            atualizaJogoDois;
+            atualizaJogoUm;
+
+
+          end);
+        end
+        else
+        begin
+          //TLoading.Show(FrmPrincipal, 'Gerando os números vencedores...');
+
+
+          TThread.CreateAnonymousThread(procedure
+          begin
+           { deletaBanco;
+            //dmPrincipal.CriarJogoLotomaniaUm;
+            dmPrincipal.CriaNumerosAleatoriosJogo1;
+            dmPrincipal.CriaNumerosAleatoriosJogo2;
+            dmPrincipal.CriaNumerosAleatoriosJogo3;
+            dmPrincipal.CriaNumerosAleatoriosJogo4;
+            dmPrincipal.CriaNumerosAleatoriosJogo5;
+            dmPrincipal.CriaNumerosAleatoriosJogo6;
+            dmPrincipal.CriaNumerosAleatoriosJogo7;
+            dmPrincipal.CriaNumerosAleatoriosJogo8;
+            dmPrincipal.CriaNumerosAleatoriosJogo9;
+            dmPrincipal.CriaNumerosAleatoriosJogo10;
+
+            dmPrincipal.qryONLINEDATA.Active := False;
+            dmPrincipal.qryONLINEDATA.Active := True;
+            dmPrincipal.qryONLINEDATA.insert;
+            dmPrincipal.qryONLINEDATA.FieldByName('ULTIMA_ATT').AsDateTime := today;
+            dmPrincipal.qryONLINEDATA.Post;   }
+
+
+            TThread.Synchronize(nil,procedure
+            begin
+              lblSTOP.Text := 'JOGOS VÁLIDOS ATÉ DIA ' + DateToStr(date + 2);
+
+              atualizaJogoDez;
+              atualizaJogoNove;
+              atualizaJogoOito;
+              atualizaJogoSete;
+              atualizaJogoSeis;
+              atualizaJogoCinco;
+              atualizaJogoQuatro;
+              atualizaJogoTres;
+              atualizaJogoDois;
+              atualizaJogoUm;
+
+
+
+              //sleep(2000);
+              //TLoading.Hide;
+            end);
+
+          end).Start;
+        end;
+
+     end;
+
+
+     if DayOf(Date - 2) mod 3 = 0 then
+     begin
+        dmPrincipal.qryNUMEROSUM.Active := False;
+        dmPrincipal.qryNUMEROSUM.Active := True;
+
+        if not dmPrincipal.qryNUMEROSUM.IsEmpty then
+        begin
+          TThread.Synchronize(nil,procedure
+          begin
+            lblSTOP.Text := 'JOGOS VÁLIDOS ATÉ DIA ' + DateToStr(date + 1);
+
+            atualizaJogoDez;
+            atualizaJogoNove;
+            atualizaJogoOito;
+            atualizaJogoSete;
+            atualizaJogoSeis;
+            atualizaJogoCinco;
+            atualizaJogoQuatro;
+            atualizaJogoTres;
+            atualizaJogoDois;
+            atualizaJogoUm;
+
+
+          end);
+        end
+        else
+        begin
+          //TLoading.Show(FrmPrincipal, 'Gerando os números vencedores...');
+
+
+          TThread.CreateAnonymousThread(procedure
+          begin
+           { deletaBanco;
+            //dmPrincipal.CriarJogoLotomaniaUm;
+            dmPrincipal.CriaNumerosAleatoriosJogo1;
+            dmPrincipal.CriaNumerosAleatoriosJogo2;
+            dmPrincipal.CriaNumerosAleatoriosJogo3;
+            dmPrincipal.CriaNumerosAleatoriosJogo4;
+            dmPrincipal.CriaNumerosAleatoriosJogo5;
+            dmPrincipal.CriaNumerosAleatoriosJogo6;
+            dmPrincipal.CriaNumerosAleatoriosJogo7;
+            dmPrincipal.CriaNumerosAleatoriosJogo8;
+            dmPrincipal.CriaNumerosAleatoriosJogo9;
+            dmPrincipal.CriaNumerosAleatoriosJogo10;
+
+            dmPrincipal.qryONLINEDATA.Active := False;
+            dmPrincipal.qryONLINEDATA.Active := True;
+            dmPrincipal.qryONLINEDATA.insert;
+            dmPrincipal.qryONLINEDATA.FieldByName('ULTIMA_ATT').AsDateTime := today;
+            dmPrincipal.qryONLINEDATA.Post;    }
+
+
+            TThread.Synchronize(nil,procedure
+            begin
+              lblSTOP.Text := 'JOGOS VÁLIDOS ATÉ DIA ' + DateToStr(date + 1);
+
+              atualizaJogoDez;
+              atualizaJogoNove;
+              atualizaJogoOito;
+              atualizaJogoSete;
+              atualizaJogoSeis;
+              atualizaJogoCinco;
+              atualizaJogoQuatro;
+              atualizaJogoTres;
+              atualizaJogoDois;
+              atualizaJogoUm;
+
+
+
+              //sleep(2000);
+              //TLoading.Hide;
+            end);
+
+          end).Start;
+        end;
+     end;
+end;
+
+procedure TFrmPrincipal.Image1Click(Sender: TObject);
+begin
+  OpenMenu(false);
+end;
+
+procedure TFrmPrincipal.Image2Click(Sender: TObject);
+begin
+  openMenu(true);
+end;
+
+procedure TFrmPrincipal.Label13Click(Sender: TObject);
+begin
+  TThread.Synchronize(nil,procedure
+    begin
+      WidthAnimation2.Start;
+    end);
+
+    TThread.Synchronize(nil,procedure
+    begin
+      image2.HitTest := false;
+      label12.Visible := false;
+      layout52.Visible := false;
+    end);
+end;
+
+procedure TFrmPrincipal.Label14Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmVencedores,frmVencedores);
+  frmVencedores.show;
+
+  //frmPrincipal.Close;
+end;
+
+procedure TFrmPrincipal.Label15Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmLotomania,frmLotomania);
+  frmLotomania.show;
+
+  FrmLotomania.geraLotomaniaUm(FrmLotomania);
+  FrmLotomania.geraLotomaniaDois(FrmLotomania);
+  FrmLotomania.geraLotomaniaTres(FrmLotomania);
+end;
+
+procedure TFrmPrincipal.Label16Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmTabela,FrmTabela);
+  frmTabela.Show;
+
+  //frmPrincipal.Close;
+end;
+
+procedure TFrmPrincipal.Label17Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmJogos, frmJogos);
+  frmJogos.Show;
+end;
+
+procedure TFrmPrincipal.LBLINICIOClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmInicial,FrmInicial);
+  FrmInicial.Show;
+end;
+
+procedure TFrmPrincipal.OpenMenu(open : Boolean);
+begin
+  if not open then
+  begin
+    TThread.Synchronize(nil,procedure
+    begin
+      RecMenuFundo.Visible := true;
+
+      WidthAnimation.Start;
+    end);
+
+  end;
+
+  if open then
+  begin
+
+    TThread.Synchronize(nil,procedure
+    begin
+      WidthAnimation2.Start;
+    end);
+
+    TThread.Synchronize(nil,procedure
+    begin
+      image2.HitTest := false;
+      label12.Visible := false;
+      layout52.Visible := false;
+    end);
+
+  end;
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoUm;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSUM.Active := False;
+  dmPrincipal.qryNUMEROSUM.Active := True;
+
+  while not dmPrincipal.qryNUMEROSUM.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSUM.FieldByName('NUMEROS_A').AsInteger;
+
+    dmPrincipal.qryNUMEROSUM.next;
+
+    i := i + 1;
+  end;
+
+  label1a.Text := IntToStr(arrayInteiros[1]);
+  label2a.Text := IntToStr(arrayInteiros[2]);
+  label3a.Text := IntToStr(arrayInteiros[3]);
+  label4a.Text := IntToStr(arrayInteiros[4]);
+  label5a.Text := IntToStr(arrayInteiros[5]);
+  label6a.Text := IntToStr(arrayInteiros[6]);
+  label7a.Text := IntToStr(arrayInteiros[7]);
+  label8a.Text := IntToStr(arrayInteiros[8]);
+  label9a.Text := IntToStr(arrayInteiros[9]);
+  label10a.Text := IntToStr(arrayInteiros[10]);
+  label11a.Text := IntToStr(arrayInteiros[11]);
+  label12a.Text := IntToStr(arrayInteiros[12]);
+  label13a.Text := IntToStr(arrayInteiros[13]);
+  label14a.Text := IntToStr(arrayInteiros[14]);
+  label15a.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoDois;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSDOIS.Active := False;
+  dmPrincipal.qryNUMEROSDOIS.Active := True;
+
+  while not dmPrincipal.qryNUMEROSDOIS.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSDOIS.FieldByName('NUMEROS_B').AsInteger;
+
+    dmPrincipal.qryNUMEROSDOIS.next;
+
+    i := i + 1;
+  end;
+
+  label1b.Text := IntToStr(arrayInteiros[1]);
+  label2b.Text := IntToStr(arrayInteiros[2]);
+  label3b.Text := IntToStr(arrayInteiros[3]);
+  label4b.Text := IntToStr(arrayInteiros[4]);
+  label5b.Text := IntToStr(arrayInteiros[5]);
+  label6b.Text := IntToStr(arrayInteiros[6]);
+  label7b.Text := IntToStr(arrayInteiros[7]);
+  label8b.Text := IntToStr(arrayInteiros[8]);
+  label9b.Text := IntToStr(arrayInteiros[9]);
+  label10b.Text := IntToStr(arrayInteiros[10]);
+  label11b.Text := IntToStr(arrayInteiros[11]);
+  label12b.Text := IntToStr(arrayInteiros[12]);
+  label13b.Text := IntToStr(arrayInteiros[13]);
+  label14b.Text := IntToStr(arrayInteiros[14]);
+  label15b.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoTres;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSTRES.Active := False;
+  dmPrincipal.qryNUMEROSTRES.Active := True;
+
+  while not dmPrincipal.qryNUMEROSTRES.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSTRES.FieldByName('NUMEROS_C').AsInteger;
+
+    dmPrincipal.qryNUMEROSTRES.next;
+
+    i := i + 1;
+  end;
+
+  label1c.Text := IntToStr(arrayInteiros[1]);
+  label2c.Text := IntToStr(arrayInteiros[2]);
+  label3c.Text := IntToStr(arrayInteiros[3]);
+  label4c.Text := IntToStr(arrayInteiros[4]);
+  label5c.Text := IntToStr(arrayInteiros[5]);
+  label6c.Text := IntToStr(arrayInteiros[6]);
+  label7c.Text := IntToStr(arrayInteiros[7]);
+  label8c.Text := IntToStr(arrayInteiros[8]);
+  label9c.Text := IntToStr(arrayInteiros[9]);
+  label10c.Text := IntToStr(arrayInteiros[10]);
+  label11c.Text := IntToStr(arrayInteiros[11]);
+  label12c.Text := IntToStr(arrayInteiros[12]);
+  label13c.Text := IntToStr(arrayInteiros[13]);
+  label14c.Text := IntToStr(arrayInteiros[14]);
+  label15c.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoQuatro;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSQUATRO.Active := False;
+  dmPrincipal.qryNUMEROSQUATRO.Active := True;
+
+  while not dmPrincipal.qryNUMEROSQUATRO.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSQUATRO.FieldByName('NUMEROS_D').AsInteger;
+
+    dmPrincipal.qryNUMEROSQUATRO.next;
+
+    i := i + 1;
+  end;
+
+  label1d.Text := IntToStr(arrayInteiros[1]);
+  label2d.Text := IntToStr(arrayInteiros[2]);
+  label3d.Text := IntToStr(arrayInteiros[3]);
+  label4d.Text := IntToStr(arrayInteiros[4]);
+  label5d.Text := IntToStr(arrayInteiros[5]);
+  label6d.Text := IntToStr(arrayInteiros[6]);
+  label7d.Text := IntToStr(arrayInteiros[7]);
+  label8d.Text := IntToStr(arrayInteiros[8]);
+  label9d.Text := IntToStr(arrayInteiros[9]);
+  label10d.Text := IntToStr(arrayInteiros[10]);
+  label11d.Text := IntToStr(arrayInteiros[11]);
+  label12d.Text := IntToStr(arrayInteiros[12]);
+  label13d.Text := IntToStr(arrayInteiros[13]);
+  label14d.Text := IntToStr(arrayInteiros[14]);
+  label15d.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoCinco;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSCINCO.Active := False;
+  dmPrincipal.qryNUMEROSCINCO.Active := True;
+
+  while not dmPrincipal.qryNUMEROSCINCO.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSCINCO.FieldByName('NUMEROS_E').AsInteger;
+
+    dmPrincipal.qryNUMEROSCINCO.next;
+
+    i := i + 1;
+  end;
+
+  label1e.Text := IntToStr(arrayInteiros[1]);
+  label2e.Text := IntToStr(arrayInteiros[2]);
+  label3e.Text := IntToStr(arrayInteiros[3]);
+  label4e.Text := IntToStr(arrayInteiros[4]);
+  label5e.Text := IntToStr(arrayInteiros[5]);
+  label6e.Text := IntToStr(arrayInteiros[6]);
+  label7e.Text := IntToStr(arrayInteiros[7]);
+  label8e.Text := IntToStr(arrayInteiros[8]);
+  label9e.Text := IntToStr(arrayInteiros[9]);
+  label10e.Text := IntToStr(arrayInteiros[10]);
+  label11e.Text := IntToStr(arrayInteiros[11]);
+  label12e.Text := IntToStr(arrayInteiros[12]);
+  label13e.Text := IntToStr(arrayInteiros[13]);
+  label14e.Text := IntToStr(arrayInteiros[14]);
+  label15e.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoSeis;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSSEIS.Active := False;
+  dmPrincipal.qryNUMEROSSEIS.Active := True;
+
+  while not dmPrincipal.qryNUMEROSSEIS.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSSEIS.FieldByName('NUMEROS_F').AsInteger;
+
+    dmPrincipal.qryNUMEROSSEIS.next;
+
+    i := i + 1;
+  end;
+
+  label1f.Text := IntToStr(arrayInteiros[1]);
+  label2f.Text := IntToStr(arrayInteiros[2]);
+  label3f.Text := IntToStr(arrayInteiros[3]);
+  label4f.Text := IntToStr(arrayInteiros[4]);
+  label5f.Text := IntToStr(arrayInteiros[5]);
+  label6f.Text := IntToStr(arrayInteiros[6]);
+  label7f.Text := IntToStr(arrayInteiros[7]);
+  label8f.Text := IntToStr(arrayInteiros[8]);
+  label9f.Text := IntToStr(arrayInteiros[9]);
+  label10f.Text := IntToStr(arrayInteiros[10]);
+  label11f.Text := IntToStr(arrayInteiros[11]);
+  label12f.Text := IntToStr(arrayInteiros[12]);
+  label13f.Text := IntToStr(arrayInteiros[13]);
+  label14f.Text := IntToStr(arrayInteiros[14]);
+  label15f.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoSete;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSSETE.Active := False;
+  dmPrincipal.qryNUMEROSSETE.Active := True;
+
+  while not dmPrincipal.qryNUMEROSSETE.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSSETE.FieldByName('NUMEROS_G').AsInteger;
+
+    dmPrincipal.qryNUMEROSSETE.next;
+
+    i := i + 1;
+  end;
+
+  label1g.Text := IntToStr(arrayInteiros[1]);
+  label2g.Text := IntToStr(arrayInteiros[2]);
+  label3g.Text := IntToStr(arrayInteiros[3]);
+  label4g.Text := IntToStr(arrayInteiros[4]);
+  label5g.Text := IntToStr(arrayInteiros[5]);
+  label6g.Text := IntToStr(arrayInteiros[6]);
+  label7g.Text := IntToStr(arrayInteiros[7]);
+  label8g.Text := IntToStr(arrayInteiros[8]);
+  label9g.Text := IntToStr(arrayInteiros[9]);
+  label10g.Text := IntToStr(arrayInteiros[10]);
+  label11g.Text := IntToStr(arrayInteiros[11]);
+  label12g.Text := IntToStr(arrayInteiros[12]);
+  label13g.Text := IntToStr(arrayInteiros[13]);
+  label14g.Text := IntToStr(arrayInteiros[14]);
+  label15g.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoOito;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSOITO.Active := False;
+  dmPrincipal.qryNUMEROSOITO.Active := True;
+
+  while not dmPrincipal.qryNUMEROSOITO.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSOITO.FieldByName('NUMEROS_H').AsInteger;
+
+    dmPrincipal.qryNUMEROSOITO.next;
+
+    i := i + 1;
+  end;
+
+  label1h.Text := IntToStr(arrayInteiros[1]);
+  label2h.Text := IntToStr(arrayInteiros[2]);
+  label3h.Text := IntToStr(arrayInteiros[3]);
+  label4h.Text := IntToStr(arrayInteiros[4]);
+  label5h.Text := IntToStr(arrayInteiros[5]);
+  label6h.Text := IntToStr(arrayInteiros[6]);
+  label7h.Text := IntToStr(arrayInteiros[7]);
+  label8h.Text := IntToStr(arrayInteiros[8]);
+  label9h.Text := IntToStr(arrayInteiros[9]);
+  label10h.Text := IntToStr(arrayInteiros[10]);
+  label11h.Text := IntToStr(arrayInteiros[11]);
+  label12h.Text := IntToStr(arrayInteiros[12]);
+  label13h.Text := IntToStr(arrayInteiros[13]);
+  label14h.Text := IntToStr(arrayInteiros[14]);
+  label15h.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoNove;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSNOVE.Active := False;
+  dmPrincipal.qryNUMEROSNOVE.Active := True;
+
+  while not dmPrincipal.qryNUMEROSNOVE.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSNOVE.FieldByName('NUMEROS_I').AsInteger;
+
+    dmPrincipal.qryNUMEROSNOVE.next;
+
+    i := i + 1;
+  end;
+
+  label1i.Text := IntToStr(arrayInteiros[1]);
+  label2i.Text := IntToStr(arrayInteiros[2]);
+  label3i.Text := IntToStr(arrayInteiros[3]);
+  label4i.Text := IntToStr(arrayInteiros[4]);
+  label5i.Text := IntToStr(arrayInteiros[5]);
+  label6i.Text := IntToStr(arrayInteiros[6]);
+  label7i.Text := IntToStr(arrayInteiros[7]);
+  label8i.Text := IntToStr(arrayInteiros[8]);
+  label9i.Text := IntToStr(arrayInteiros[9]);
+  label10i.Text := IntToStr(arrayInteiros[10]);
+  label11i.Text := IntToStr(arrayInteiros[11]);
+  label12i.Text := IntToStr(arrayInteiros[12]);
+  label13i.Text := IntToStr(arrayInteiros[13]);
+  label14i.Text := IntToStr(arrayInteiros[14]);
+  label15i.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.atualizaJogoDez;
+var
+i: integer;
+arrayInteiros : array [1..16] of integer;
+begin
+  i := 1;
+
+  dmPrincipal.qryNUMEROSDEZ.Active := False;
+  dmPrincipal.qryNUMEROSDEZ.Active := True;
+
+  while not dmPrincipal.qryNUMEROSDEZ.Eof do
+  begin
+    arrayInteiros[i] := dmPrincipal.qryNUMEROSDEZ.FieldByName('NUMEROS_J').AsInteger;
+
+    dmPrincipal.qryNUMEROSDEZ.next;
+
+    i := i + 1;
+  end;
+
+  label1j.Text := IntToStr(arrayInteiros[1]);
+  label2j.Text := IntToStr(arrayInteiros[2]);
+  label3j.Text := IntToStr(arrayInteiros[3]);
+  label4j.Text := IntToStr(arrayInteiros[4]);
+  label5j.Text := IntToStr(arrayInteiros[5]);
+  label6j.Text := IntToStr(arrayInteiros[6]);
+  label7j.Text := IntToStr(arrayInteiros[7]);
+  label8j.Text := IntToStr(arrayInteiros[8]);
+  label9j.Text := IntToStr(arrayInteiros[9]);
+  label10j.Text := IntToStr(arrayInteiros[10]);
+  label11j.Text := IntToStr(arrayInteiros[11]);
+  label12j.Text := IntToStr(arrayInteiros[12]);
+  label13j.Text := IntToStr(arrayInteiros[13]);
+  label14j.Text := IntToStr(arrayInteiros[14]);
+  label15j.Text := IntToStr(arrayInteiros[16]);
+
+end;
+
+procedure TFrmPrincipal.deletaBanco;
+begin
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_UM');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_DOIS');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_TRES');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_QUATRO');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_CINCO');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_SEIS');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_SETE');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_OITO');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_NOVE');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM JOGO_DEZ');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM LOTOMANIA_UM');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM LOTOMANIA_DOIS');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM LOTOMANIA_TRES');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+
+  dmPrincipal.qryONLINEDELETAR.Active := False;
+  dmPrincipal.qryONLINEDELETAR.sql.Clear;
+  dmPrincipal.qryONLINEDELETAR.sql.Add('DELETE FROM DATA_ATT');
+  dmPrincipal.qryONLINEDELETAR.ExecSQL;
+end;
+
+
+
+
+procedure TFrmPrincipal.WidthAnimationFinish(Sender: TObject);
+begin
+  TThread.Synchronize(nil,procedure
+    begin
+      image2.HitTest := true;
+      label12.Visible := true;
+      layout52.Visible := true;
+    end);
+end;
+
+end.

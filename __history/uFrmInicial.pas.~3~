@@ -1,0 +1,102 @@
+unit uFrmInicial;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, uFancyDialog;
+
+type
+  TfrmInicial = class(TForm)
+    RecFundo: TRectangle;
+    Rectangle1: TRectangle;
+    Label1: TLabel;
+    GridFundo: TGridPanelLayout;
+    Rectangle2: TRectangle;
+    Label2: TLabel;
+    Rectangle3: TRectangle;
+    Label3: TLabel;
+    Rectangle4: TRectangle;
+    Label4: TLabel;
+    Rectangle5: TRectangle;
+    Label5: TLabel;
+    Rectangle6: TRectangle;
+    Image1: TImage;
+    Label6: TLabel;
+    Label7: TLabel;
+    Rectangle7: TRectangle;
+    Image2: TImage;
+    procedure Rectangle1Click(Sender: TObject);
+    procedure Label3Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Rectangle7Click(Sender: TObject);
+    procedure Rectangle6Click(Sender: TObject);
+    procedure Rectangle2Click(Sender: TObject);
+    procedure Rectangle4Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmInicial: TfrmInicial;
+
+implementation
+
+{$R *.fmx}
+
+uses
+uFrmAuthenticator, uFrmLotomania, uFrmPrincipal, uDmPrincipal, uFrmTabela, uFrmVencedores;
+
+
+
+procedure TfrmInicial.FormShow(Sender: TObject);
+begin
+  diag := TFancyDialog.Create(FrmInicial);
+end;
+
+procedure TfrmInicial.Label3Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmVencedores, FrmVencedores);
+  FrmVencedores.Show;
+end;
+
+procedure TfrmInicial.Rectangle1Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  FrmPrincipal.Show;
+
+  FrmPrincipal.geraNumeros(FrmPrincipal);
+end;
+
+procedure TfrmInicial.Rectangle2Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmLotomania, FrmLotomania);
+  FrmLotomania.Show;
+
+  FrmLotomania.geraLotomaniaUm(FrmLotomania);
+  FrmLotomania.geraLotomaniaDois(FrmLotomania);
+  FrmLotomania.geraLotomaniaTres(FrmLotomania);
+
+end;
+
+procedure TfrmInicial.Rectangle4Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmTabela, FrmTabela);
+  FrmTabela.Show;
+end;
+
+procedure TfrmInicial.Rectangle6Click(Sender: TObject);
+begin
+  diag.Show(TIconDialog.Error,'Ops','Você ainda não tem acesso à esse bônus');
+end;
+
+procedure TfrmInicial.Rectangle7Click(Sender: TObject);
+begin
+  diag.Show(TIconDialog.Error,'Ops','Você ainda não tem acesso à esse bônus');
+end;
+
+end.
